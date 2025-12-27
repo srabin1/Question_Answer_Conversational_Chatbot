@@ -15,8 +15,8 @@ from langchain_classic.chains import create_retrieval_chain
 load_dotenv()
 
 # --- Keys ---
-groq_key = os.getenv("GROQ_API_KEY")
-hf_token = os.getenv("HF_TOKEN")  # optional for public models; helpful to avoid rate limits
+groq_key = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
+hf_token = os.getenv("HF_TOKEN")  or st.secrets.get("HF_TOKEN")# optional for public models; helpful to avoid rate limits
 
 if not groq_key:
     st.error("GROQ_API_KEY is missing. Put it in your .env file.")

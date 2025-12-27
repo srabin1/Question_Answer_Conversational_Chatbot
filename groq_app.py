@@ -15,8 +15,8 @@ from langchain_classic.chains import create_retrieval_chain
 load_dotenv()
 
 # --- Keys ---
-openai_key = os.getenv("OPENAI_API_KEY")
-groq_key = os.getenv("GROQ_API_KEY")
+openai_key = os.getenv("OPENAI_API_KEY") or st.secrets.get("OPENAI_API_KEY")
+groq_key = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
 
 if not groq_key:
     st.error("GROQ_API_KEY is missing. Put it in your .env file.")
