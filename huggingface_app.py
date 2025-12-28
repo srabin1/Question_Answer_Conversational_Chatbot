@@ -1,7 +1,6 @@
 import os
 import time
 import streamlit as st
-from dotenv import load_dotenv
 
 from langchain_groq import ChatGroq
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -12,24 +11,54 @@ from langchain_community.document_loaders import PyPDFDirectoryLoader
 from langchain_classic.chains.combine_documents import create_stuff_documents_chain
 from langchain_classic.chains import create_retrieval_chain
 
-load_dotenv()
 
-# --- Keys ---
-groq_key = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY")
-hf_token = os.getenv("HF_TOKEN")  or st.secrets.get("HF_TOKEN")# optional for public models; helpful to avoid rate limits
+st.title("RAG Document Q&A With HuggingFace Embeddings")
+
+# ----------------------------
+# Per-user API key input
+# ----------------------------
+with st.sidebar:
+    st.header("API Keys (your own)")
+    st.caption("Keys are stored only in your current browser session.")
+
+    if "user_groq_key" not in st.session_state:
+        st.session_state.user_groq_key = ""
+
+    groq_key = st.text_input(
+        "Groq API key",
+        type="password",
+        key="user_groq_key",
+        help="Paste your Groq key. Avoid extra spaces/newlines."
+    )
+
+    model_name = st.selectbox(
+        "Groq model",
+        ["llama-3.3-70b-versatile", "llama-3.1-8b-instant", "llama-3.1-70b-versatile"],
+        index=0
+    )
+
+# sanitize
+groq_key = (groq_key or "").strip()
+
+# Optional: keep local env var fallback for your local machine
+if not groq_key:
+    groq_key = (os.getenv("GROQ_API_KEY") or "").strip()
 
 if not groq_key:
-    st.error("GROQ_API_KEY is missing. Put it in your .env file.")
+    st.info("Enter your **Groq API key** in the sidebar to start.")
     st.stop()
 
 os.environ["GROQ_API_KEY"] = groq_key
+
+# Optional HF token (you can keep this in secrets for your app to reduce rate limits)
+hf_token = (st.secrets.get("HF_TOKEN") or os.getenv("HF_TOKEN") or "").strip()
 if hf_token:
     os.environ["HF_TOKEN"] = hf_token
 
-# --- LLM (still Groq) ---
+# --- LLM (Groq) ---
 llm = ChatGroq(
     groq_api_key=groq_key,
-    model_name="llama-3.3-70b-versatile"
+    model_name=model_name
 )
 
 prompt = ChatPromptTemplate.from_template(
@@ -45,19 +74,16 @@ Question: {input}
 """
 )
 
-st.title("RAG Document Q&A With HuggingFace Embeddings")
-
 # ---- Build vector DB once (cached) ----
 @st.cache_resource(show_spinner=True)
 def build_vector_db(pdf_folder: str):
-    # Hugging Face embeddings (local + lightweight)
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
 
     loader = PyPDFDirectoryLoader(pdf_folder)
     docs = loader.load()
 
     splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
-    chunks = splitter.split_documents(docs)  # remove [:50] unless you want to limit
+    chunks = splitter.split_documents(docs)
 
     vectors = FAISS.from_documents(chunks, embeddings)
     return vectors
@@ -84,6 +110,10 @@ with st.form("qa_form"):
 if ask:
     if st.session_state.vectors is None:
         st.warning("Please click **Document Embedding** first to create the vector database.")
+        st.stop()
+
+    if not user_prompt.strip():
+        st.warning("Please type a question.")
         st.stop()
 
     document_chain = create_stuff_documents_chain(llm, prompt)
