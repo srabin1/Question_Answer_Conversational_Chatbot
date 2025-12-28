@@ -1,30 +1,53 @@
+# --- Core LangChain ---
 langchain
-langchain-classic
+langchain-core
 langchain-community
+langchain-classic
 langchain-openai
-langchain-text-splitters
 langchain-huggingface
-langchain_groq
-langchain_core
+langchain-text-splitters
+langchain-groq
+langchain-chroma
 langserve
 
+# --- Vector Stores & Embeddings ---
 chromadb
-langchain-chroma
 faiss-cpu
 sentence-transformers
 
+# --- LLM Providers ---
+openai
+huggingface_hub
+
+# --- Document Loading & Parsing ---
 pypdf
 pymupdf
-arxiv
-wikipedia
+unstructured
 beautifulsoup4
 bs4
+arxiv
+wikipedia
+youtube_transcript_api
+pytube
 
-python-dotenv
-ipykernel
-streamlit
+# --- Search & Tools ---
+duckduckgo_search==5.3.1b1
+ddgs
+validators==0.28.1
+numexpr
+
+# --- Databases ---
+duckdb
+pandas
+mysql-connector-python
+SQLAlchemy
+
+# --- Web / API ---
 fastapi
 uvicorn
 sse_starlette
-ddgs
+streamlit
 
+# --- Utilities ---
+python-dotenv
+ipykernel
