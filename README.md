@@ -46,5 +46,5 @@ All apps are configured so that each user enters their own API key:
 
 Link to my deployed Streamlit apps:
 1. Summarize Texts from YouTube channel or any websites:
-   [Text Summary]([https://streamlit.io/cloud](https://questionanswerconversationalchatbot-gsqxb2cbt7xrt5hecc6fds.streamlit.app/))
+   [Text Summary](https://streamlit.io/cloud](https://questionanswerconversationalchatbot-gsqxb2cbt7xrt5hecc6fds.streamlit.app/)
 
