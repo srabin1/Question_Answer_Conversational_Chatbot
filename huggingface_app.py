@@ -104,7 +104,7 @@ if st.button("Document Embedding"):
         st.stop()
 
 with st.form("qa_form"):
-    user_prompt = st.text_input("Enter your query from the research paper(s)")
+    user_prompt = st.text_input('Enter your query from the research paper "Attention Is All You Need" and "A Comprehensive Overview of Large Language Models"')
     ask = st.form_submit_button("Ask")
 
 if ask:
@@ -131,3 +131,4 @@ if ask:
             st.write(f"Chunk {i}:")
             st.write(doc.page_content)
             st.write("---")
+
