@@ -20,7 +20,7 @@ from langchain_community.document_loaders import PyPDFLoader
 # Page UI
 # ----------------------------
 st.set_page_config(page_title="Conversational RAG with PDFs", layout="wide")
-st.title("Conversational RAG With PDF uploads and chat history")
+st.title("Conversational RAG with PDF uploads and chat history")
 st.write("Upload PDFs and chat with their content.")
 
 
@@ -210,3 +210,4 @@ if user_input:
     st.write("Assistant:", response["answer"])
     with st.expander("Chat History (debug)"):
         st.write(session_history.messages)
+
