@@ -45,6 +45,25 @@ All apps are configured so that each user enters their own API key:
 ## ☁️ Running on Streamlit Cloud
 
 Link to my deployed Streamlit apps:
-1. Summarize Texts from YouTube channel or any websites:
+
+1. RAG Document Q&A With Groq:
+   [RAG Document Q&A With Groq](https://questionanswerconversationalchatbot-znkeatp8cuoutfmvcekjj9.streamlit.app/)
+
+2. Enhanced Q&A Chatbot With OpenAI:
+   [Enhanced Q&A Chatbot With OpenAI](https://questionanswerconversationalchatbot-2jvydeqfojelumoljvmfhy.streamlit.app/)
+
+3. Upload your PDF and ask any question about it:
+   [Conversational RAG with PDF uploads and chat history](https://questionanswerconversationalchatbot-jaqzeetl5eanmggzk2iyzw.streamlit.app/)
+
+4. This is a search engine, ask anything from Wikipedia or Arxive websites:
+   [LangChain-Chat with search](https://questionanswerconversationalchatbot-g48wy7tukjf7dtvkqpse7x.streamlit.app/)
+
+5. Upload your SQL Database and ask any question:
+   [LangChain: Chat with SQL DB](https://questionanswerconversationalchatbot-ks3mf82qbtxwj3ttr8v9jk.streamlit.app/)
+
+6. RAG Document Q&A With HuggingFace Embeddings:
+   [RAG Document Q&A With HuggingFace Embeddings](https://questionanswerconversationalchatbot-ednd455mduvxpo89b2wzxr.streamlit.app/)
+
+7. Summarize Texts from YouTube channel or any other websites:
    [Text Summary](https://questionanswerconversationalchatbot-gsqxb2cbt7xrt5hecc6fds.streamlit.app/)
 
