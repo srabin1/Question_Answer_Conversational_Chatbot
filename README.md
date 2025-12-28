@@ -1,4 +1,4 @@
-# Question_Answer_Conversational_Chatbot: 🧠 LangChain + Streamlit AI Apps (Cloud-Ready)
+# Question Answer Conversational Chatbots: 🧠 LangChain + Streamlit AI Apps (Cloud-Ready)
 
 This repository contains a collection of **Streamlit applications powered by LangChain** for building AI assistants, including:
 
@@ -28,21 +28,6 @@ All apps are **Streamlit Cloud–compatible** and designed so that **each user p
 - Minimal dependencies, clean architecture  
 
 ---
-
-## 📂 Repository Structure (example)
-
-```text
-.
-├── app.py                          # Main Streamlit app (or multiple apps)
-├── student.db                     # SQLite DB for SQL chatbot (if applicable)
-├── research_papers/               # PDFs for RAG apps
-│   ├── paper1.pdf
-│   └── paper2.pdf
-├── requirements.txt
-└── README.md
-```
-
----
 ## 🔑 API Keys (How It Works)
 
 All apps are configured so that each user enters their own API key:
@@ -56,3 +41,10 @@ All apps are configured so that each user enters their own API key:
 - Groq API key → LLM inference
 - OpenAI API key → Chat models or embeddings
 - HF_TOKEN (optional) → Improves HuggingFace download limits
+
+## ☁️ Running on Streamlit Cloud
+
+Link to my deployed Streamlit apps:
+1. Summarize Texts from YouTube channel or any websites:
+   [Text Summary]([https://streamlit.io/cloud](https://questionanswerconversationalchatbot-gsqxb2cbt7xrt5hecc6fds.streamlit.app/))
+
