@@ -65,5 +65,5 @@ Link to my deployed Streamlit apps:
    [RAG Document Q&A With HuggingFace Embeddings](https://questionanswerconversationalchatbot-ednd455mduvxpo89b2wzxr.streamlit.app/)
 
 7. Summarize Texts from YouTube channel or any other websites:
-   [Text Summary](https://questionanswerconversationalchatbot-gsqxb2cbt7xrt5hecc6fds.streamlit.app/)
+   [Text Summary](https://questionanswerconversationalchatbot-svua2cflnhymvotbxfxavi.streamlit.app/)
 
