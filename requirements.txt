@@ -1,53 +1,47 @@
-# --- Core LangChain ---
 langchain
-langchain-core
-langchain-community
-langchain-classic
-langchain-openai
-langchain-huggingface
-langchain-text-splitters
-langchain-groq
-langchain-chroma
-langserve
-
-# --- Vector Stores & Embeddings ---
-chromadb
-faiss-cpu
-sentence-transformers
-
-# --- LLM Providers ---
-openai
-huggingface_hub
-
-# --- Document Loading & Parsing ---
-pypdf
-pymupdf
-unstructured
-beautifulsoup4
-bs4
-arxiv
-wikipedia
-youtube_transcript_api
-pytube
-
-# --- Search & Tools ---
-duckduckgo_search==5.3.1b1
-ddgs
-validators==0.28.1
-numexpr
-
-# --- Databases ---
-duckdb
-pandas
-mysql-connector-python
-SQLAlchemy
-
-# --- Web / API ---
-fastapi
-uvicorn
-sse_starlette
-streamlit
-
-# --- Utilities ---
 python-dotenv
 ipykernel
+langchain-community
+pypdf
+bs4
+arxiv
+pymupdf
+wikipedia
+langchain-text-splitters
+langchain-openai
+chromadb
+sentence_transformers
+langchain_huggingface
+faiss-cpu
+langchain_chroma
+duckdb
+pandas
+openai
+langchain-groq
+duckduckgo_search==5.3.1b1
+pymupdf
+arxiv
+wikipedia
+mysql-connector-python
+SQLAlchemy
+validators==0.28.1
+youtube_transcript_api
+unstructured
+pytube
+numexpr
+huggingface_hub
+gradio
+boto3
+awscli
+openai
+langchain_nvidia_ai_endpoints
+langchain_community
+faiss-cpu
+python-dotenv
+streamlit
+pypdf
+crewai
+crewai_tools
+pinecone-client 
+pinecone-text
+pinecone-notebooks
