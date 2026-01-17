@@ -71,7 +71,7 @@ Link to my deployed Streamlit apps:
 8. Text To Math Problem Solver Using Groq models:
    [Math Chatbot](https://questionanswerconversationalchatbot-b7jptkss6xnqjuqesvzuym.streamlit.app/)
    
-9. RAG-Based PDF Question Answering with NVIDIA NIMRAG-Based PDF Question Answering with NVIDIA NIM:
+9. RAG-Based PDF Question Answering with NVIDIA NIM:
    [NVIDIA_NIM RAG Chatbot](https://questionanswerconversationalchatbot-hyeih44pod9eudc4qewmsn.streamlit.app/)
   
 
