@@ -34,7 +34,7 @@ gradio
 boto3
 awscli
 openai
-langchain_nvidia_ai_endpoints
+langchain-nvidia-ai-endpoints
 langchain_community
 faiss-cpu
 python-dotenv
@@ -44,4 +44,5 @@ crewai
 crewai_tools
 pinecone-client 
 pinecone-text
+
 pinecone-notebooks
